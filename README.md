@@ -17,7 +17,7 @@ Circuit I/O library with multi-format support (Bookshelf, LEF/DEF, Verilog).
 ### From Source
 
 ```bash
-git clone --recursive https://github.com/gradinnovate-labs/circuit-io.git
+git clone --recursive https://github.com/gradinnovate-agents/circuit-io.git
 cd circuit-io
 
 # Option 1: Recommended - use uv (faster)
@@ -25,6 +25,16 @@ uv pip install -e .
 
 # Option 2: Use pip
 pip install -e .
+```
+
+**Prerequisites** (Linux):
+
+```bash
+# Ubuntu/Debian
+sudo apt-get install libboost-graph-dev libboost-regex-dev
+
+# CentOS/RHEL
+sudo yum install boost-devel
 ```
 
 **Note**: The build process is handled automatically by `scikit-build-core`. You don't need to run CMake manually.

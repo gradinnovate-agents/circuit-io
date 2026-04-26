@@ -84,6 +84,8 @@ add_library(${TARGET_NAME} MODULE SHARED
   src/Region.cpp
   src/Group.cpp
   src/Params.cpp
+  src/RowMap.cpp
+  src/SubRowNodeMap.cpp
   src/PlaceDB.cpp
   src/DefWriter.cpp
   src/BookshelfWriter.cpp

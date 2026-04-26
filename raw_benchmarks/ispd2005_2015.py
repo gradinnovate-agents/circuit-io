@@ -8,12 +8,7 @@ import os
 import sys
 import tarfile
 import lzma
-if sys.version_info[0] < 3:
-    import urllib2 as urllib
-    from StringIO import StringIO
-else:
-    import urllib.request as urllib
-    from io import BytesIO as StringIO
+import urllib.request as urllib
 
 baseURL = "http://www.cerc.utexas.edu/~zixuan/"
 target_dir = os.path.dirname(os.path.abspath(__file__))
@@ -32,7 +27,7 @@ for filename in filenames:
     print("Uncompress %s to %s" % (path_to_file, target_dir))
     with lzma.open(path_to_file, 'rb') as xz:
         with tarfile.open(fileobj=xz) as tar:
-            tar.extractall(target_dir)
+            tar.extractall(target_dir, filter='data')
 
     print("remove downloaded file %s" % (path_to_file))
     os.remove(path_to_file)

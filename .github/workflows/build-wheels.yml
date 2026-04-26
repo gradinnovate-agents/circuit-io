@@ -31,9 +31,9 @@ jobs:
           submodules: recursive
 
       - name: Build wheels with cibuildwheel
-        uses: pypa/cibuildwheel@v2.21.3
+        uses: pypa/cibuildwheel@v2.23.3
         env:
-          CIBW_BUILD: cp38-* cp39-* cp310-* cp311-* cp312-*
+          CIBW_BUILD: cp39-* cp310-* cp311-* cp312-*
           CIBW_SKIP: "*-musllinux_* *-win32 *-win_arm64 *-macosx_arm64"
           CIBW_MANYLINUX_X86_64_IMAGE: manylinux2014
           CIBW_ARCHS: x86_64
@@ -59,11 +59,11 @@ jobs:
           submodules: recursive
 
       - name: Build wheels with cibuildwheel
-        uses: pypa/cibuildwheel@v2.21.3
+        uses: pypa/cibuildwheel@v2.23.3
         env:
           CIBW_BUILD: cp310-* cp311-* cp312-*
           CIBW_SKIP: "*-musllinux_* *-win32 *-win_arm64 *-macosx_arm64"
-          CIBW_MANYLINUX_X86_64_IMAGE: manylinux2014
+          CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_17
           CIBW_ARCHS: x86_64
           CIBW_BUILD_FRONTEND: build
           CIBW_ENVIRONMENT: |
